@@ -32,13 +32,13 @@ jobs:
       run: | 
         pytest --cov=app --cov-report=term --cov-fail-under=80 
  
-    - name: Validate script output 
-      run: | 
-        output=$(python app.py) 
-        if [ "$output" != "5" ]; then 
-          echo "Unexpected output: $output" 
-          exit 1 
-        fi 
+    - name: Validate script output
+      run: |
+        output=$(python app.py)
+        if [ "$output" != "5" ]; then
+          echo "Unexpected output: $output"
+          exit 1
+        fi
  
   deploy: 
     needs: build-test 
